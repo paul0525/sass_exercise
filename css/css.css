@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*变理的声明*/
+body {
+  background-color: #f7f6f5; }
+
+a {
+  text-decoration: none;
+  color: grey; }
+
+nav {
+  width: 96%;
+  font-family: "微软雅黑";
+  font-size: 16px;
+  color: grey; }
+  nav ul li {
+    list-style: none;
+    width: 60px;
+    text-align: center;
+    display: inline-block; }
+
+/*# sourceMappingURL=css.css.map */

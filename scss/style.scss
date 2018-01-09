@@ -38,9 +38,9 @@ nav{
 
 /*混合器*/
 @mixin div-corners{
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
 }
 
 div{
@@ -55,4 +55,28 @@ div{
     width: $width;
     height:$height;
     @include div-corners;   
+}
+
+/*给混合器传参*/
+@mixin link-colors($normal, $hover, $visited) {
+  color: $normal;
+  &:hover { color: $hover; }
+  &:visited { color: $visited; }
+}
+
+a{
+    @include link-colors(blue, red, green)
+}
+
+
+/**
+     继承
+ */
+.error {
+  border: 1px solid red;
+  background-color: #fdd;
+}
+.seriousError {
+  @extend .error;
+  border-width: 3px;
 }

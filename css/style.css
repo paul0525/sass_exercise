@@ -35,8 +35,26 @@ div {
   border-color: red;
   width: 200px;
   height: 200px;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px; }
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px; }
+
+/*给混合器传参*/
+a {
+  color: blue; }
+  a:hover {
+    color: red; }
+  a:visited {
+    color: green; }
+
+/**
+     继承
+ */
+.error, .seriousError {
+  border: 1px solid red;
+  background-color: #fdd; }
+
+.seriousError {
+  border-width: 3px; }
 
 /*# sourceMappingURL=style.css.map */
