@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import "variable";
+ 
+/*变量的声明*/ 
+$highlight-color:#F90!default;
+
+h1{
+   color: $highlight-color;
+}
+
+h3{
+   color: #DE5E85;
+}
+
+/***在内声明变量***/
+nav{
+    $width:80%;
+    width: $width;
+    color:$highlight-color;
+}
+
+.mynav{
+    border: 1px solid $highlight-color;
+}
+
+#contain{
+    h1 { color: #333 }
+    p { margin-bottom: 1.4em }
+    #content aside { background-color: #EEE }
+    font-size: 16px;
+}
+
+#content {
+  background-color: #f5f5f5;
+  aside { background-color: #eee }
+}
+
+
+/*混合器*/
+@mixin div-corners{
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+div{
+    border:{
+        style:solid;
+        width:2px;
+        color: $highlight-color;
+    }
+    
+    $width: 200px;
+    $height: 200px;
+    width: $width;
+    height:$height;
+    @include div-corners;   
+}
