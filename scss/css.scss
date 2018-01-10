@@ -1,32 +1,165 @@
 @charset "utf-8";
 
 /*变理的声明*/
+
 $bg-color:#f7f6f5;
 $bg-div-color:white;
 $font-size:16px;
 $font-family:"微软雅黑";
 $font-color:grey;
+$menu-height:53px;
+$border-color:gainsboro;   //边框颜色
 
-body{
+body {
     background-color: $bg-color;
+    border: 0;
+    margin: 0;
 }
 
-a{
+a {
     text-decoration: none;
     color: $font-color;
 }
 
-nav{
+@mixin ul-cls {
+    display: inline-block;
+    height: 23px;
+    li {
+        display: inline-block;
+        width: 60px;
+        list-style: none;
+        text-align: center;
+    }
+}
+
+nav {
+    position: relative;
     width: 96%;
     font-family: $font-family;
     font-size: $font-size;
     color: $font-color;
-    ul{
-        li{
-            list-style: none;
-            width: 60px;
-            text-align: center;
-            display: inline-block;
+    //  ul{
+    //      display: inline-block;
+    //      height: 23px;
+    //      li{
+    //          list-style: none;
+    //          width: 60px;
+    //          text-align: center;
+    //          display: inline-block;
+    //      }
+    //  }
+    ul {
+        @include ul-cls; //用混合器代替    
+    }
+    ul:not(:first-child) {
+        li:not(:first-child) {
+            width: 80px;
         }
+        ;
+    }
+}
+
+.right {
+    position: absolute;
+    right: 0;
+}
+
+.search {
+    width: 170px;
+}
+
+.center-div {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+}
+
+.full-height-padding {
+    padding: 0;
+    border: 0;
+    height: $menu-height;
+    position: relative;
+}
+
+.menu-div {
+    background-color: $border-color;
+    width: 100%;
+    border: 1px solid grey {
+        left: 0;
+        right: 0;   
+    }
+    .menu {
+        @extend .center-div;
+        @extend .full-height-padding;
+        overflow: hidden;
+        height: $menu-height;
+        transition: height 1s ;               //过渡效果
+        -webkit-transition:height 1s;
+        ul {
+            @include ul-cls;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            li {
+                @extend .full-height-padding;
+                width: auto;
+                margin-right: 10px;
+                line-height: $menu-height;
+                // height: ($menu-height)-2;
+                a {
+                    height: ($menu-height)-2;
+                    display: inline-block;
+                    &:hover {
+                        border-bottom: 2px solid royalblue;
+                    }
+                }
+            }
+        }
+    }
+    .menu2 {
+        line-height: $menu-height;
+        ul {
+            height: $menu-height;
+            li {
+                a {
+                    &:hover {
+                        border-bottom: 2px solid gainsboro;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//@keyframes display-div{
+//  from{ height: $menu-height;}
+//  to { height: ($menu-height)*2;}
+//}
+
+
+.menu:hover {
+    //animation: display-div .8s ;
+    //animation-fill-mode:forwards;
+    height: ($menu-height)*2;
+}
+
+
+.context{
+    @extend .center-div;
+    
+    .top{
+        background-color: red;
+    }
+    
+    .context-left{
+        background-color: green;
+        width: 70%;
+        position: relative;
+    }
+    
+    .context-right{
+        background-color: #4169E1;
+        width:30%;
+        top:0;
     }
 }
