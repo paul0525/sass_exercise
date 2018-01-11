@@ -87,6 +87,16 @@ nav {
 
 .context .top {
   background-color: red; }
+.context .top1 p:before {
+  content: "台词:";
+  font-weight: bold;
+  color: red; }
+.context .top1 span:after {
+  display: block;
+  content: "-作者";
+  color: gray; }
+  .context .top1 span:after font {
+    weight: bold; }
 .context .context-left {
   background-color: green;
   width: 70%;
@@ -95,5 +105,44 @@ nav {
   background-color: #4169E1;
   width: 30%;
   top: 0; }
+
+.info-msg {
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  height: 300px;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -250px;
+  border: 1px  solid darksalmon;
+  background-color: white;
+  resize: both;
+  overflow: hidden; }
+  .info-msg .info-header {
+    height: 30px;
+    line-height: 30px;
+    background-color: gainsboro; }
+  .info-msg .info-context {
+    height: 240px; }
+  .info-msg .info-bottom {
+    background-color: gainsboro;
+    margin-bottom: 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: center; }
+
+.info-msg-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: darkgrey;
+  filter: alpha(Opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  z-index: 9990; }
 
 /*# sourceMappingURL=css.css.map */
