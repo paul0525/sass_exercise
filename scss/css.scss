@@ -181,9 +181,10 @@ nav {
 }
 
 
+//1，如何把这块放到js里？
 .info-msg{
     position: absolute;
-    display: none;
+    display: block;
     z-index: 9999;
     height: 300px;
     width: 500px;
@@ -216,7 +217,7 @@ nav {
     position: absolute;
     height: 100%;
     width: 100%;
-    display: none;
+    display: block;
     top: 0;
     left: 0;
     background-color: darkgrey;
