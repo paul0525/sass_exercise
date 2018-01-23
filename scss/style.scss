@@ -80,3 +80,7 @@ a{
   @extend .error;
   border-width: 3px;
 }
+
+.father{
+    box-sizing: border-box;
+}

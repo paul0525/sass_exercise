@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+html body{
+    height: 100%;
+}
+
+.context{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.context-1{
+    width: 100%;
+//  position: relative;
+    display: table;
+    .left{
+        display: table-cell;
+//      display: inline-block;
+        width: 50%;
+    }
+    .right{
+        display: table-cell;
+//      display: inline-block;
+        width: 50%;
+//      position: absolute; /*让元素相对于次元素定位，但在收起第一个元素时，底下的bottom会堆叠显示*/
+    }
+}
+
+.context-bottom{
+    height: 30px;
+    background-color: lightgray;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+.element{
+    max-height: 0;
+    overflow: hidden;
+    transition:  max-height .25s;
+    padding: 2px 5px 0 0;
+}
+
+/* X~Y 相邻选择器，X~Y匹配与X相同级别的所有Y元素*/
+/**
+     关于动画恢复的理解，当被选中的时候，选中样式起作用，反之则把起作用的样式去掉
+ */
+:checked ~ .element {
+  max-height: 666px;
+}
+
+.check-in,
+.check-out {
+    color: #34538b;
+    cursor: pointer;
+}
+.check-out {
+    display: none;
+}
+:checked ~ .check-out {
+    display: inline-block;
+}
+:checked ~ .check-in {
+    display: none;
+}
+.img-div {
+    
+    img{
+        width:200px;
+        height: 200px;
+        object-fit: none;
+    };
+}
