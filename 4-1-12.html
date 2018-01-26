@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>计数器重置</title>
+		<style type="text/css">
+			/*.counter {
+				counter-reset: wangxiaoer 2 wangxiaosan 3;
+				font-size: 32px;
+				font-family: "arial black";
+				color: #cd0000;
+			}*/
+			/*
+			.counter::before {
+				content: counter(wangxiaoer);
+			}
+			
+			.counter::after {
+				content: counter(wangxiaosan);
+			}
+			*/
+			
+			.reset {
+				padding-left: 20px;
+				counter-reset: wangxiaoer;
+			}
+			
+			.counter:before {
+				content: counters(wangxiaoer, '-') '. ';
+				counter-increment: wangxiaoer;
+			}
+		</style>
+	</head>
+
+	<body style="">
+		<p>我叫王小二</p>
+		<!--<p class="counter"></p>
+		<p class="counter"></p>-->
+		<!--这样的计数器有用吗？为什么这里显示还是一样的？-->
+
+		<div class="reset">
+			<div class="counter">我是王小二
+				<div class="reset">
+					<div class="counter">我是王小二的大儿子</div>
+					<div class="counter">我是王小二的二儿子
+						<div class="reset">
+							<div class="counter">我是王小二的二儿子的大孙子</div>
+							<div class="counter">我是王小二的二儿子的二孙子</div>
+							<div class="counter">我是王小二的二儿子的小孙子</div>
+						</div>
+					</div>
+					<div class="counter">我是王小二的三儿子</div>
+				</div>
+			</div>
+			<div class="counter">我是王小三</div>
+			<div class="counter">我是王小四
+				<div class="reset">
+					<div class="counter">我是王小四的大儿子</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
