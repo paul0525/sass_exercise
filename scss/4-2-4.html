@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>利用css实现小图标</title>
+	</head>
+	<style type="text/css">
+		.icon-menu{
+			display: inline-block;
+			width: 140px;
+			height: 10px;
+			padding: 35px 0;
+			border-top: 10px solid;
+			border-bottom: 10px solid;
+			background-color: currentcolor;
+			background-clip: content-box;	
+		}
+		
+		.icon-dot{
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			border:  10px solid;
+			border-radius: 50%;
+			background-color: currentcolor;
+			background-clip: content-box;
+		}
+		
+		.father{
+			width: 300px;
+			background-color: gray;
+			height: 20px;
+		}
+		
+		.son{
+			margin: 0 -20px;
+			background-color: royalblue;
+			display: block;
+			height: 20px;
+		}
+		
+		.list1 ul{
+			background-color: bisque;
+			display: inline-block;
+			padding-left: 0;
+			margin-right: -20px;	
+		}
+		
+		.list1 li{
+			display:inline-block;	
+			list-style: none;
+			width: 100px;
+			margin-right: 20px;
+			background-color: gainsboro;
+			float: left;
+		}
+		
+		.list2 ul{
+			display: table;
+			padding-left: 0;
+		}
+		
+		.list2 li{
+			display: table-cell;
+			width: 100px;
+			text-align: center;
+			background-color: greenyellow;
+		}
+		
+		.container{
+			width: 600px;
+			margin:  0 auto;
+			
+		}
+		
+		.container div{
+			display: table-cell;
+		}
+		.colLeft{
+			background-color: goldenrod;
+			width: 300px;
+		}
+		
+		.colRight{
+			background-color: greenyellow;
+			width: 300px;
+		}
+		
+	</style>
+	<body style="text-align: center;">
+			<i class="icon-menu"></i>
+			<i class="icon-dot"></i>
+			
+			<div class="father">
+				<div class="son"></div>
+			</div>
+			
+			<div style="margin:0 auto;" class="list1">
+				<h2>列表</h2>
+				<ul>
+					<li>列表1</li>
+					<li>列表2</li>
+					<li>列表3</li>
+				</ul>
+			</div>
+			
+			<div class="list2">
+				<ul>
+					<li>列表4</li>
+					<li>列表5</li>
+					<li>列表6</li>
+				</ul>
+			</div>
+			
+			<div class="container">
+				<div class="colLeft">
+					<p>左边的内容</p>
+					<p>左边的内容1</p>
+				</div>
+				<div class="colRight">
+					<p>右边的内容</p>
+				</div>
+			</div>
+		
+	</body> 
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.father {
+				width: 300px;
+				height: 150px;
+				background-color: greenyellow;
+				position: relative;
+			}
+			
+			.son {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 200px;
+				height: 100px;
+				margin: auto;
+				background-color: lightcoral;
+			}
+			
+			.box {
+				width: 150px;
+				height: 150px;
+				overflow: hidden;
+			}
+			
+			.dotted {
+				width: 150px;
+				height: 150px;
+				border: 149px dotted #cd0000;
+			}
+			
+			.add {
+				display: inline-block;
+				width: 76px;
+				height: 76px;
+				color: #ccc;
+				border: 2px dashed;
+				transition: color .25s;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.add:hover {
+				color: #34538B;
+			}
+			
+			.add::before,
+			.add::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
+			
+			.add::before {
+				width: 20px;
+				border-top: 4px solid;
+				margin: -2px 0 0 -10px;
+			}
+			
+			.add::after {
+				height: 20px;
+				border-left: 4px solid;
+				margin: -10px 0 0 -2px;
+			}
+			
+			input[type="search"] {
+				width: 200px;
+				height: 40px;
+				padding: 10px 40px 10px 10px;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
+			}
+			
+			input::-webkit-search-decoration,
+			input::-webkit-search-cancel-button {
+				display: none;
+			}
+			
+			.icon-clear {
+				width: 16px;
+				height: 16px;
+				margin: 1px 0 0 -38px;
+				border: 11px solid transparent;
+				border-radius: 50%;
+				background: #999;
+				color: white;
+				position: absolute;
+				visibility: hidden;
+				background-clip: content-box;
+				text-align: center;
+			}
+			
+			.icon-clear::before {
+				content: "x";
+				font-size: .5em;
+				display: table-cell;
+				width: 16px;
+    			height: 16px;
+    			line-height: 13px;
+			}
+			
+			input:valid+.icon-clear {
+				visibility: visible;
+			}
+			
+			.san{
+				width: 0;
+				border: 10px solid;
+				border-color: #f30 transparent transparent;
+				display: inline-block; 
+				margin-left: 10px; 
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<div style="margin-left: auto; margin-right:auto;width: 200px;">xxx</div>
+		</div>
+
+		<div class="father">
+			<div class="son"></div>
+		</div>
+
+		<div class="box">
+			<div class="dotted"></div>
+		</div>
+
+		<div>
+			<a href class="add" title="继续上传"></a>
+		</div>
+
+		<div style="width: 300px; margin: 0 auto;">
+			<input type="search" id="search" value="我是初始值" />
+			<label for="search" class="icon-clear"></label>
+			<div class="san"></div>			
+		</div>
+		
+	</body>
+
+</html>
